@@ -4,8 +4,6 @@ var rota:float
 var dir:float
 var SPEED = 210
 
-@onready var screen_size = get_viewport_rect().size
-
 #This script moves the bullet in the direction its rotated
 
 #This sets the position and rotation

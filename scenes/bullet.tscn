@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwfs1ea0q4njj"]
+[gd_scene load_steps=8 format=3 uid="uid://cwfs1ea0q4njj"]
 
 [ext_resource type="Script" uid="uid://b63ku7bcmsy1c" path="res://scripts/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://cv8txld6hggqj" path="res://assets/bullet.png" id="2_l5glv"]
 [ext_resource type="PackedScene" uid="uid://cxtj7nxenyt2r" path="res://scenes/kill_zone.tscn" id="3_l5glv"]
+[ext_resource type="PackedScene" uid="uid://di5yg5rb273mr" path="res://scenes/bulletkillasteroid.tscn" id="4_eoqba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
 size = Vector2(12, 1)
@@ -10,8 +11,12 @@ size = Vector2(12, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eoqba"]
 size = Vector2(14, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qncy5"]
+size = Vector2(14, 3)
+
 [node name="bullet" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_y25gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,3 +31,9 @@ shape = SubResource("RectangleShape2D_2b2rl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_eoqba")
+
+[node name="bulletkillasteroid" parent="." instance=ExtResource("4_eoqba")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bulletkillasteroid"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_qncy5")

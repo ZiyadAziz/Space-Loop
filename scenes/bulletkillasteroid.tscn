@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://di5yg5rb273mr"]
+
+[ext_resource type="Script" uid="uid://dl3jrjhfgj61o" path="res://scripts/bulletkillasteroid.gd" id="1_mkk4y"]
+
+[node name="bulletkillasteroid" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_mkk4y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

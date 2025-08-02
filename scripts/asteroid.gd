@@ -1,11 +1,17 @@
-extends Area2D
+extends CharacterBody2D
 
+var target_pos: Vector2  # Player's position at spawn
+var SPEED := 50.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	# Calculate direction to target once at spawn
+	var direction = (target_pos - global_position).normalized()
+	velocity = direction * SPEED
 
+	# Rotate to face direction of movement
+	rotation = velocity.angle()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta):
+	# Move the character using built-in movement function
+	velocity = velocity.normalized() * SPEED  # Ensure consistent speed
+	move_and_slide()
