@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqp08spudajea"]
 
 [ext_resource type="Script" uid="uid://xopwf81p0jae" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bbxsefsufe3a" path="res://assets/temp_character.png" id="1_lj8jo"]
+[ext_resource type="Texture2D" uid="uid://cbifxkyq0ufbn" path="res://assets/spacefighter.png" id="2_g2els"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2brh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lj8jo")
+"texture": ExtResource("2_g2els")
 }],
 "loop": true,
 "name": &"default",
@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj8jo"]
-radius = 7.0
+radius = 3.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -26,6 +26,7 @@ sprite_frames = SubResource("SpriteFrames_g2brh")
 frame_progress = 0.00501151
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_lj8jo")
 
 [node name="Shooting Position" type="Node2D" parent="."]
